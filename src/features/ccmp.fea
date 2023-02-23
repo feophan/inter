@@ -4,7 +4,7 @@
   circumflexgravecomb.cn circumflexacutecomb.cn brevegravecomb.cn
   macroncomb dieresismacroncomb.cn dieresisacutecomb.cn
   dieresiscaroncomb.cn dieresisgravecomb.cn dotmacroncomb.cn
-  tildeacutecomb macrongravecomb.cn macronacutecomb.cn
+  tildeacutecomb macrongravecomb.cn macronacutecomb.cn macrongravecomb.lc macronacutecomb.lc
   macrondieresiscomb.cn acutedotcomb.cn carondotcomb.cn
   tildemacroncomb.cn tildedieresiscomb.cn circumflexnosp overscorenosp
   brevenosp dotnosp dieresisnosp hookabovecmb ringnosp acutedblnosp caroncmb
@@ -33,10 +33,13 @@ lookup idieresis_double {
   sub [Idieresis Yi-cy] [Idieresis Yi-cy] by Idieresis.double;
 } idieresis_double;
 
-# /uni0304 /acutecomb -> /uni1DC4.lc
-lookup macron_acute {
+# macron/breve + acute/grave
+lookup combmarks {
   sub macroncomb acutecomb by macronacutecomb.lc;
-} macron_acute;
+  sub macroncomb gravecomb by macrongravecomb.lc;
+  sub brevenosp acutecomb by breveacutecomb.cn;
+  sub brevenosp gravecomb by brevegravecomb.cn;
+} combmarks;
 
 # Transpose sequences like /i /gravecomb -> /idotless /gravecomb
 lookup ccmp02 {

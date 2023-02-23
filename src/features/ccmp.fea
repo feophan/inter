@@ -35,7 +35,7 @@ lookup idieresis_double {
 
 # /uni0304 /acutecomb -> /uni1DC4.lc
 lookup macron_acute {
-  sub uni0304 acutecomb by uni1DC4.lc;
+  sub macroncomb acutecomb by macronacutecomb.lc;
 } macron_acute;
 
 # Transpose sequences like /i /gravecomb -> /idotless /gravecomb

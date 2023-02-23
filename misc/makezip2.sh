@@ -97,6 +97,3 @@ popd >/dev/null
 rm -rf "$ZIPDIR"
 
 echo "Created $OUTFILE"
-if $OPT_REVEAL_IN_FINDER && [ -f /usr/bin/open ]; then
-  /usr/bin/open "$OUTFILE"
-fi

@@ -33,6 +33,11 @@ lookup idieresis_double {
   sub [Idieresis Yi-cy] [Idieresis Yi-cy] by Idieresis.double;
 } idieresis_double;
 
+# /uni0304 /acutecomb -> /uni1DC4.lc
+lookup macron_acute {
+  sub uni0304 acutecomb by uni1DC4.lc;
+} macron_acute;
+
 # Transpose sequences like /i /gravecomb -> /idotless /gravecomb
 lookup ccmp02 {
   sub i' @CCMP_ACC by idotless;

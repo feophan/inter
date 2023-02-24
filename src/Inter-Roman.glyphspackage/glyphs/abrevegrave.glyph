@@ -11,7 +11,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (130,0);
+pos = (1050,0);
 ref = brevegravecomb.cn;
 }
 );
@@ -25,7 +25,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (96,24);
+pos = (1134,0);
 ref = brevegravecomb.cn;
 }
 );
@@ -39,7 +39,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (206,-14);
+pos = (880,0);
 ref = brevegravecomb.cn;
 }
 );
@@ -53,7 +53,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (118,-42);
+pos = (974,0);
 ref = brevegravecomb.cn;
 }
 );
@@ -67,7 +67,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (72,-18);
+pos = (1078,0);
 ref = brevegravecomb.cn;
 }
 );
@@ -81,7 +81,7 @@ ref = a;
 },
 {
 alignment = 1;
-pos = (206,-14);
+pos = (752,42);
 ref = brevegravecomb.cn;
 }
 );

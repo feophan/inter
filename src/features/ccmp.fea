@@ -592,8 +592,8 @@ lookup ccmp05 {
 
 # macron/breve + acute/grave
 lookup ccmp06 {
-  sub macroncomb acutecomb by macronacutecomb.lc;
-  sub macroncomb gravecomb by macrongravecomb.lc;
+  sub macron acutecomb by macronacutecomb.lc;
+  sub macron gravecomb by macrongravecomb.lc;
   sub brevenosp acutecomb by breveacutecomb.cn;
   sub brevenosp gravecomb by brevegravecomb.cn;
 } ccmp06;

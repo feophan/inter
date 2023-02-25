@@ -122,12 +122,8 @@ lookup ccmp03 {
   sub y dieresisnosp by ydieresis;
   sub A macroncomb by Amacron;
   sub a macroncomb by amacron;
-  sub a macroncomb acutecomb by amacronacute;
-  sub a macroncomb brevenosp by amacronbreve;
   sub A brevenosp by Abreve;
   sub a brevenosp by abreve;
-  sub a brevenosp acutecomb by abreveacute;
-  sub a brevenosp gravecomb by abrevegrave;
   sub A ogoneknosp by Aogonek;
   sub a ogoneknosp by aogonek;
   sub aogonek ringnosp by aringogonek;
@@ -278,6 +274,8 @@ lookup ccmp03 {
   sub a brevetildecomb.cn by abrevetilde;
   sub e breveacutecomb.cn by ebreveacute;
   sub e brevegravecomb.cn by ebrevegrave;
+  sub e brevenosp acutecomb by ebreveacute;
+  sub e brevenosp gravecomb by ebrevegrave;
   sub E dotbelow by Edotbelow;
   sub e dotbelow by edotbelow;
   sub E hookabovecmb by Ehookabove;

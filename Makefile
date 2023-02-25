@@ -33,57 +33,57 @@ $(UFODIR)/%.designspace: $(UFODIR)/%.glyphs $(UFODIR)/features | venv
 	. $(VENV) ; python misc/tools/postprocess-designspace.py $@
 
 # UFOs from designspace
-$(UFODIR)/Inter2-%Italic.ufo: $(UFODIR)/Inter2-Italic.designspace | venv
+$(UFODIR)/Inter-%Italic.ufo: $(UFODIR)/Inter-Italic.designspace | venv
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
-$(UFODIR)/Inter2-%.ufo: $(UFODIR)/Inter2-Roman.designspace | venv
+$(UFODIR)/Inter-%.ufo: $(UFODIR)/Inter-Roman.designspace | venv
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
 
 # make sure intermediate files are not rm'd by make
 .PRECIOUS: \
-	$(UFODIR)/Inter2-Black.ufo \
-	$(UFODIR)/Inter2-Regular.ufo \
-	$(UFODIR)/Inter2-Thin.ufo \
-	$(UFODIR)/Inter2-Light.ufo \
-	$(UFODIR)/Inter2-ExtraLight.ufo \
-	$(UFODIR)/Inter2-Medium.ufo \
-	$(UFODIR)/Inter2-SemiBold.ufo \
-	$(UFODIR)/Inter2-Bold.ufo \
-	$(UFODIR)/Inter2-ExtraBold.ufo \
+	$(UFODIR)/Inter-Black.ufo \
+	$(UFODIR)/Inter-Regular.ufo \
+	$(UFODIR)/Inter-Thin.ufo \
+	$(UFODIR)/Inter-Light.ufo \
+	$(UFODIR)/Inter-ExtraLight.ufo \
+	$(UFODIR)/Inter-Medium.ufo \
+	$(UFODIR)/Inter-SemiBold.ufo \
+	$(UFODIR)/Inter-Bold.ufo \
+	$(UFODIR)/Inter-ExtraBold.ufo \
 	\
-	$(UFODIR)/Inter2-BlackItalic.ufo \
-	$(UFODIR)/Inter2-Italic.ufo \
-	$(UFODIR)/Inter2-ThinItalic.ufo \
-	$(UFODIR)/Inter2-LightItalic.ufo \
-	$(UFODIR)/Inter2-ExtraLightItalic.ufo \
-	$(UFODIR)/Inter2-MediumItalic.ufo \
-	$(UFODIR)/Inter2-SemiBoldItalic.ufo \
-	$(UFODIR)/Inter2-BoldItalic.ufo \
-	$(UFODIR)/Inter2-ExtraBoldItalic.ufo \
+	$(UFODIR)/Inter-BlackItalic.ufo \
+	$(UFODIR)/Inter-Italic.ufo \
+	$(UFODIR)/Inter-ThinItalic.ufo \
+	$(UFODIR)/Inter-LightItalic.ufo \
+	$(UFODIR)/Inter-ExtraLightItalic.ufo \
+	$(UFODIR)/Inter-MediumItalic.ufo \
+	$(UFODIR)/Inter-SemiBoldItalic.ufo \
+	$(UFODIR)/Inter-BoldItalic.ufo \
+	$(UFODIR)/Inter-ExtraBoldItalic.ufo \
 	\
-	$(UFODIR)/Inter2-DisplayBlack.ufo \
-	$(UFODIR)/Inter2-Display.ufo \
-	$(UFODIR)/Inter2-DisplayThin.ufo \
-	$(UFODIR)/Inter2-DisplayLight.ufo \
-	$(UFODIR)/Inter2-DisplayExtraLight.ufo \
-	$(UFODIR)/Inter2-DisplayMedium.ufo \
-	$(UFODIR)/Inter2-DisplaySemiBold.ufo \
-	$(UFODIR)/Inter2-DisplayBold.ufo \
-	$(UFODIR)/Inter2-DisplayExtraBold.ufo \
+	$(UFODIR)/Inter-DisplayBlack.ufo \
+	$(UFODIR)/Inter-Display.ufo \
+	$(UFODIR)/Inter-DisplayThin.ufo \
+	$(UFODIR)/Inter-DisplayLight.ufo \
+	$(UFODIR)/Inter-DisplayExtraLight.ufo \
+	$(UFODIR)/Inter-DisplayMedium.ufo \
+	$(UFODIR)/Inter-DisplaySemiBold.ufo \
+	$(UFODIR)/Inter-DisplayBold.ufo \
+	$(UFODIR)/Inter-DisplayExtraBold.ufo \
 	\
-	$(UFODIR)/Inter2-DisplayBlackItalic.ufo \
-	$(UFODIR)/Inter2-DisplayItalic.ufo \
-	$(UFODIR)/Inter2-DisplayThinItalic.ufo \
-	$(UFODIR)/Inter2-DisplayLightItalic.ufo \
-	$(UFODIR)/Inter2-DisplayExtraLightItalic.ufo \
-	$(UFODIR)/Inter2-DisplayMediumItalic.ufo \
-	$(UFODIR)/Inter2-DisplaySemiBoldItalic.ufo \
-	$(UFODIR)/Inter2-DisplayBoldItalic.ufo \
-	$(UFODIR)/Inter2-DisplayExtraBoldItalic.ufo \
+	$(UFODIR)/Inter-DisplayBlackItalic.ufo \
+	$(UFODIR)/Inter-DisplayItalic.ufo \
+	$(UFODIR)/Inter-DisplayThinItalic.ufo \
+	$(UFODIR)/Inter-DisplayLightItalic.ufo \
+	$(UFODIR)/Inter-DisplayExtraLightItalic.ufo \
+	$(UFODIR)/Inter-DisplayMediumItalic.ufo \
+	$(UFODIR)/Inter-DisplaySemiBoldItalic.ufo \
+	$(UFODIR)/Inter-DisplayBoldItalic.ufo \
+	$(UFODIR)/Inter-DisplayExtraBoldItalic.ufo \
 	\
-	$(UFODIR)/Inter2-Roman.glyphs \
-	$(UFODIR)/Inter2-Italic.glyphs \
-	$(UFODIR)/Inter2-Roman.designspace \
-	$(UFODIR)/Inter2-Italic.designspace
+	$(UFODIR)/Inter-Roman.glyphs \
+	$(UFODIR)/Inter-Italic.glyphs \
+	$(UFODIR)/Inter-Roman.designspace \
+	$(UFODIR)/Inter-Italic.designspace
 
 # ---------------------------------------------------------------------------------
 # products
@@ -119,228 +119,243 @@ $(UFODIR):
 
 # roman + italic with STAT
 $(FONTDIR)/var/inter-roman-and-italic.stamp: \
-	  $(FONTDIR)/var/_Inter2-Roman.var.ttf \
-	  $(FONTDIR)/var/_Inter2-Italic.var.ttf \
+	  $(FONTDIR)/var/_Inter-Roman.var.ttf \
+	  $(FONTDIR)/var/_Inter-Italic.var.ttf \
 	  | venv
 	@#. $(VENV) ; python misc/tools/postprocess-vf2.py $^
 	mkdir $(FONTDIR)/var/gen-stat
 	. $(VENV) ; gftools gen-stat --out $(FONTDIR)/var/gen-stat $^
+<<<<<<< HEAD
 	mv $(FONTDIR)/var/gen-stat/_Inter2-Roman.var.ttf $(FONTDIR)/var/Inter2.var.ttf
 	mv $(FONTDIR)/var/gen-stat/_Inter2-Italic.var.ttf $(FONTDIR)/var/Inter2-Italic.var.ttf
+=======
+	mv $(FONTDIR)/var/gen-stat/_Inter-Roman.var.ttf $(FONTDIR)/var/Inter.var.ttf
+	mv $(FONTDIR)/var/gen-stat/_Inter-Italic.var.ttf $(FONTDIR)/var/Inter-Italic.var.ttf
+>>>>>>> parent of f716c1de8 (try_rename)
 	rm -rf $(FONTDIR)/var/gen-stat
 	touch $@
 
 $(FONTDIR)/var/Inter2.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
-$(FONTDIR)/var/Inter2-Italic.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
+$(FONTDIR)/var/Inter-Italic.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
 
 $(FONTDIR)/var/InterV.var.ttf: $(FONTDIR)/var/Inter2.var.ttf | venv
 	. $(VENV) ; python misc/tools/rename.py --family "Inter V" -o $@ $<
-$(FONTDIR)/var/InterV-Italic.var.ttf: $(FONTDIR)/var/Inter2-Italic.var.ttf | venv
+$(FONTDIR)/var/InterV-Italic.var.ttf: $(FONTDIR)/var/Inter-Italic.var.ttf | venv
 	. $(VENV) ; python misc/tools/rename.py --family "Inter V" -o $@ $<
 
 var: \
+<<<<<<< HEAD
 	$(FONTDIR)/var/Inter2.var.ttf \
 	$(FONTDIR)/var/Inter2-Italic.var.ttf \
+=======
+	$(FONTDIR)/var/Inter.var.ttf \
+	$(FONTDIR)/var/Inter-Italic.var.ttf \
+>>>>>>> parent of f716c1de8 (try_rename)
 	$(FONTDIR)/var/InterV.var.ttf \
 	$(FONTDIR)/var/InterV-Italic.var.ttf
 
 var_web: \
+<<<<<<< HEAD
 	$(FONTDIR)/var/Inter2.var.woff2 \
 	$(FONTDIR)/var/Inter2-Italic.var.woff2
+=======
+	$(FONTDIR)/var/Inter.var.woff2 \
+	$(FONTDIR)/var/Inter-Italic.var.woff2
+>>>>>>> parent of f716c1de8 (try_rename)
 
 web: var_web static_web
 
 static_otf: \
-	$(FONTDIR)/static/Inter2-Black.otf \
-	$(FONTDIR)/static/Inter2-BlackItalic.otf \
-	$(FONTDIR)/static/Inter2-Regular.otf \
-	$(FONTDIR)/static/Inter2-Italic.otf \
-	$(FONTDIR)/static/Inter2-Thin.otf \
-	$(FONTDIR)/static/Inter2-ThinItalic.otf \
-	$(FONTDIR)/static/Inter2-Light.otf \
-	$(FONTDIR)/static/Inter2-LightItalic.otf \
-	$(FONTDIR)/static/Inter2-ExtraLight.otf \
-	$(FONTDIR)/static/Inter2-ExtraLightItalic.otf \
-	$(FONTDIR)/static/Inter2-Medium.otf \
-	$(FONTDIR)/static/Inter2-MediumItalic.otf \
-	$(FONTDIR)/static/Inter2-SemiBold.otf \
-	$(FONTDIR)/static/Inter2-SemiBoldItalic.otf \
-	$(FONTDIR)/static/Inter2-Bold.otf \
-	$(FONTDIR)/static/Inter2-BoldItalic.otf \
-	$(FONTDIR)/static/Inter2-ExtraBold.otf \
-	$(FONTDIR)/static/Inter2-ExtraBoldItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayBlack.otf \
-	$(FONTDIR)/static/Inter2-DisplayBlackItalic.otf \
-	$(FONTDIR)/static/Inter2-Display.otf \
-	$(FONTDIR)/static/Inter2-DisplayItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayThin.otf \
-	$(FONTDIR)/static/Inter2-DisplayThinItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayLight.otf \
-	$(FONTDIR)/static/Inter2-DisplayLightItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayExtraLight.otf \
-	$(FONTDIR)/static/Inter2-DisplayExtraLightItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayMedium.otf \
-	$(FONTDIR)/static/Inter2-DisplayMediumItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplaySemiBold.otf \
-	$(FONTDIR)/static/Inter2-DisplaySemiBoldItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayBold.otf \
-	$(FONTDIR)/static/Inter2-DisplayBoldItalic.otf \
-	$(FONTDIR)/static/Inter2-DisplayExtraBold.otf \
-	$(FONTDIR)/static/Inter2-DisplayExtraBoldItalic.otf
+	$(FONTDIR)/static/Inter-Black.otf \
+	$(FONTDIR)/static/Inter-BlackItalic.otf \
+	$(FONTDIR)/static/Inter-Regular.otf \
+	$(FONTDIR)/static/Inter-Italic.otf \
+	$(FONTDIR)/static/Inter-Thin.otf \
+	$(FONTDIR)/static/Inter-ThinItalic.otf \
+	$(FONTDIR)/static/Inter-Light.otf \
+	$(FONTDIR)/static/Inter-LightItalic.otf \
+	$(FONTDIR)/static/Inter-ExtraLight.otf \
+	$(FONTDIR)/static/Inter-ExtraLightItalic.otf \
+	$(FONTDIR)/static/Inter-Medium.otf \
+	$(FONTDIR)/static/Inter-MediumItalic.otf \
+	$(FONTDIR)/static/Inter-SemiBold.otf \
+	$(FONTDIR)/static/Inter-SemiBoldItalic.otf \
+	$(FONTDIR)/static/Inter-Bold.otf \
+	$(FONTDIR)/static/Inter-BoldItalic.otf \
+	$(FONTDIR)/static/Inter-ExtraBold.otf \
+	$(FONTDIR)/static/Inter-ExtraBoldItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayBlack.otf \
+	$(FONTDIR)/static/Inter-DisplayBlackItalic.otf \
+	$(FONTDIR)/static/Inter-Display.otf \
+	$(FONTDIR)/static/Inter-DisplayItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayThin.otf \
+	$(FONTDIR)/static/Inter-DisplayThinItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayLight.otf \
+	$(FONTDIR)/static/Inter-DisplayLightItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayExtraLight.otf \
+	$(FONTDIR)/static/Inter-DisplayExtraLightItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayMedium.otf \
+	$(FONTDIR)/static/Inter-DisplayMediumItalic.otf \
+	$(FONTDIR)/static/Inter-DisplaySemiBold.otf \
+	$(FONTDIR)/static/Inter-DisplaySemiBoldItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayBold.otf \
+	$(FONTDIR)/static/Inter-DisplayBoldItalic.otf \
+	$(FONTDIR)/static/Inter-DisplayExtraBold.otf \
+	$(FONTDIR)/static/Inter-DisplayExtraBoldItalic.otf
 
 static_ttf: \
-	$(FONTDIR)/static/Inter2-Black.ttf \
-	$(FONTDIR)/static/Inter2-BlackItalic.ttf \
-	$(FONTDIR)/static/Inter2-Regular.ttf \
-	$(FONTDIR)/static/Inter2-Italic.ttf \
-	$(FONTDIR)/static/Inter2-Thin.ttf \
-	$(FONTDIR)/static/Inter2-ThinItalic.ttf \
-	$(FONTDIR)/static/Inter2-Light.ttf \
-	$(FONTDIR)/static/Inter2-LightItalic.ttf \
-	$(FONTDIR)/static/Inter2-ExtraLight.ttf \
-	$(FONTDIR)/static/Inter2-ExtraLightItalic.ttf \
-	$(FONTDIR)/static/Inter2-Medium.ttf \
-	$(FONTDIR)/static/Inter2-MediumItalic.ttf \
-	$(FONTDIR)/static/Inter2-SemiBold.ttf \
-	$(FONTDIR)/static/Inter2-SemiBoldItalic.ttf \
-	$(FONTDIR)/static/Inter2-Bold.ttf \
-	$(FONTDIR)/static/Inter2-BoldItalic.ttf \
-	$(FONTDIR)/static/Inter2-ExtraBold.ttf \
-	$(FONTDIR)/static/Inter2-ExtraBoldItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayBlack.ttf \
-	$(FONTDIR)/static/Inter2-DisplayBlackItalic.ttf \
-	$(FONTDIR)/static/Inter2-Display.ttf \
-	$(FONTDIR)/static/Inter2-DisplayItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayThin.ttf \
-	$(FONTDIR)/static/Inter2-DisplayThinItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayLight.ttf \
-	$(FONTDIR)/static/Inter2-DisplayLightItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayExtraLight.ttf \
-	$(FONTDIR)/static/Inter2-DisplayExtraLightItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayMedium.ttf \
-	$(FONTDIR)/static/Inter2-DisplayMediumItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplaySemiBold.ttf \
-	$(FONTDIR)/static/Inter2-DisplaySemiBoldItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayBold.ttf \
-	$(FONTDIR)/static/Inter2-DisplayBoldItalic.ttf \
-	$(FONTDIR)/static/Inter2-DisplayExtraBold.ttf \
-	$(FONTDIR)/static/Inter2-DisplayExtraBoldItalic.ttf
+	$(FONTDIR)/static/Inter-Black.ttf \
+	$(FONTDIR)/static/Inter-BlackItalic.ttf \
+	$(FONTDIR)/static/Inter-Regular.ttf \
+	$(FONTDIR)/static/Inter-Italic.ttf \
+	$(FONTDIR)/static/Inter-Thin.ttf \
+	$(FONTDIR)/static/Inter-ThinItalic.ttf \
+	$(FONTDIR)/static/Inter-Light.ttf \
+	$(FONTDIR)/static/Inter-LightItalic.ttf \
+	$(FONTDIR)/static/Inter-ExtraLight.ttf \
+	$(FONTDIR)/static/Inter-ExtraLightItalic.ttf \
+	$(FONTDIR)/static/Inter-Medium.ttf \
+	$(FONTDIR)/static/Inter-MediumItalic.ttf \
+	$(FONTDIR)/static/Inter-SemiBold.ttf \
+	$(FONTDIR)/static/Inter-SemiBoldItalic.ttf \
+	$(FONTDIR)/static/Inter-Bold.ttf \
+	$(FONTDIR)/static/Inter-BoldItalic.ttf \
+	$(FONTDIR)/static/Inter-ExtraBold.ttf \
+	$(FONTDIR)/static/Inter-ExtraBoldItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayBlack.ttf \
+	$(FONTDIR)/static/Inter-DisplayBlackItalic.ttf \
+	$(FONTDIR)/static/Inter-Display.ttf \
+	$(FONTDIR)/static/Inter-DisplayItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayThin.ttf \
+	$(FONTDIR)/static/Inter-DisplayThinItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayLight.ttf \
+	$(FONTDIR)/static/Inter-DisplayLightItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayExtraLight.ttf \
+	$(FONTDIR)/static/Inter-DisplayExtraLightItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayMedium.ttf \
+	$(FONTDIR)/static/Inter-DisplayMediumItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplaySemiBold.ttf \
+	$(FONTDIR)/static/Inter-DisplaySemiBoldItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayBold.ttf \
+	$(FONTDIR)/static/Inter-DisplayBoldItalic.ttf \
+	$(FONTDIR)/static/Inter-DisplayExtraBold.ttf \
+	$(FONTDIR)/static/Inter-DisplayExtraBoldItalic.ttf
 
 static_ttf_hinted: \
-	$(FONTDIR)/static-hinted/Inter2-Black.ttf \
-	$(FONTDIR)/static-hinted/Inter2-BlackItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Regular.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Italic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Thin.ttf \
-	$(FONTDIR)/static-hinted/Inter2-ThinItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Light.ttf \
-	$(FONTDIR)/static-hinted/Inter2-LightItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-ExtraLight.ttf \
-	$(FONTDIR)/static-hinted/Inter2-ExtraLightItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Medium.ttf \
-	$(FONTDIR)/static-hinted/Inter2-MediumItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-SemiBold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-SemiBoldItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Bold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-BoldItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-ExtraBold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-ExtraBoldItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBlack.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBlackItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-Display.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayThin.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayThinItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayLight.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayLightItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraLight.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraLightItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayMedium.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayMediumItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplaySemiBold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplaySemiBoldItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBoldItalic.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraBold.ttf \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraBoldItalic.ttf
+	$(FONTDIR)/static-hinted/Inter-Black.ttf \
+	$(FONTDIR)/static-hinted/Inter-BlackItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Regular.ttf \
+	$(FONTDIR)/static-hinted/Inter-Italic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Thin.ttf \
+	$(FONTDIR)/static-hinted/Inter-ThinItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Light.ttf \
+	$(FONTDIR)/static-hinted/Inter-LightItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-ExtraLight.ttf \
+	$(FONTDIR)/static-hinted/Inter-ExtraLightItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Medium.ttf \
+	$(FONTDIR)/static-hinted/Inter-MediumItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-SemiBold.ttf \
+	$(FONTDIR)/static-hinted/Inter-SemiBoldItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Bold.ttf \
+	$(FONTDIR)/static-hinted/Inter-BoldItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-ExtraBold.ttf \
+	$(FONTDIR)/static-hinted/Inter-ExtraBoldItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayBlack.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayBlackItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-Display.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayThin.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayThinItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayLight.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayLightItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraLight.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraLightItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayMedium.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayMediumItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplaySemiBold.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplaySemiBoldItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayBold.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayBoldItalic.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraBold.ttf \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraBoldItalic.ttf
 
 static_web: \
-	$(FONTDIR)/static/Inter2-Black.woff2 \
-	$(FONTDIR)/static/Inter2-BlackItalic.woff2 \
-	$(FONTDIR)/static/Inter2-Regular.woff2 \
-	$(FONTDIR)/static/Inter2-Italic.woff2 \
-	$(FONTDIR)/static/Inter2-Thin.woff2 \
-	$(FONTDIR)/static/Inter2-ThinItalic.woff2 \
-	$(FONTDIR)/static/Inter2-Light.woff2 \
-	$(FONTDIR)/static/Inter2-LightItalic.woff2 \
-	$(FONTDIR)/static/Inter2-ExtraLight.woff2 \
-	$(FONTDIR)/static/Inter2-ExtraLightItalic.woff2 \
-	$(FONTDIR)/static/Inter2-Medium.woff2 \
-	$(FONTDIR)/static/Inter2-MediumItalic.woff2 \
-	$(FONTDIR)/static/Inter2-SemiBold.woff2 \
-	$(FONTDIR)/static/Inter2-SemiBoldItalic.woff2 \
-	$(FONTDIR)/static/Inter2-Bold.woff2 \
-	$(FONTDIR)/static/Inter2-BoldItalic.woff2 \
-	$(FONTDIR)/static/Inter2-ExtraBold.woff2 \
-	$(FONTDIR)/static/Inter2-ExtraBoldItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayBlack.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayBlackItalic.woff2 \
-	$(FONTDIR)/static/Inter2-Display.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayThin.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayThinItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayLight.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayLightItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayExtraLight.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayExtraLightItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayMedium.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayMediumItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplaySemiBold.woff2 \
-	$(FONTDIR)/static/Inter2-DisplaySemiBoldItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayBold.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayBoldItalic.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayExtraBold.woff2 \
-	$(FONTDIR)/static/Inter2-DisplayExtraBoldItalic.woff2
+	$(FONTDIR)/static/Inter-Black.woff2 \
+	$(FONTDIR)/static/Inter-BlackItalic.woff2 \
+	$(FONTDIR)/static/Inter-Regular.woff2 \
+	$(FONTDIR)/static/Inter-Italic.woff2 \
+	$(FONTDIR)/static/Inter-Thin.woff2 \
+	$(FONTDIR)/static/Inter-ThinItalic.woff2 \
+	$(FONTDIR)/static/Inter-Light.woff2 \
+	$(FONTDIR)/static/Inter-LightItalic.woff2 \
+	$(FONTDIR)/static/Inter-ExtraLight.woff2 \
+	$(FONTDIR)/static/Inter-ExtraLightItalic.woff2 \
+	$(FONTDIR)/static/Inter-Medium.woff2 \
+	$(FONTDIR)/static/Inter-MediumItalic.woff2 \
+	$(FONTDIR)/static/Inter-SemiBold.woff2 \
+	$(FONTDIR)/static/Inter-SemiBoldItalic.woff2 \
+	$(FONTDIR)/static/Inter-Bold.woff2 \
+	$(FONTDIR)/static/Inter-BoldItalic.woff2 \
+	$(FONTDIR)/static/Inter-ExtraBold.woff2 \
+	$(FONTDIR)/static/Inter-ExtraBoldItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayBlack.woff2 \
+	$(FONTDIR)/static/Inter-DisplayBlackItalic.woff2 \
+	$(FONTDIR)/static/Inter-Display.woff2 \
+	$(FONTDIR)/static/Inter-DisplayItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayThin.woff2 \
+	$(FONTDIR)/static/Inter-DisplayThinItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayLight.woff2 \
+	$(FONTDIR)/static/Inter-DisplayLightItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayExtraLight.woff2 \
+	$(FONTDIR)/static/Inter-DisplayExtraLightItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayMedium.woff2 \
+	$(FONTDIR)/static/Inter-DisplayMediumItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplaySemiBold.woff2 \
+	$(FONTDIR)/static/Inter-DisplaySemiBoldItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayBold.woff2 \
+	$(FONTDIR)/static/Inter-DisplayBoldItalic.woff2 \
+	$(FONTDIR)/static/Inter-DisplayExtraBold.woff2 \
+	$(FONTDIR)/static/Inter-DisplayExtraBoldItalic.woff2
 
 static_web_hinted: \
-	$(FONTDIR)/static-hinted/Inter2-Black.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-BlackItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Regular.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Italic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Thin.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-ThinItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Light.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-LightItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-ExtraLight.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-ExtraLightItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Medium.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-MediumItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-SemiBold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-SemiBoldItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Bold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-BoldItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-ExtraBold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-ExtraBoldItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBlack.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBlackItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-Display.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayThin.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayThinItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayLight.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayLightItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraLight.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraLightItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayMedium.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayMediumItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplaySemiBold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplaySemiBoldItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayBoldItalic.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraBold.woff2 \
-	$(FONTDIR)/static-hinted/Inter2-DisplayExtraBoldItalic.woff2
+	$(FONTDIR)/static-hinted/Inter-Black.woff2 \
+	$(FONTDIR)/static-hinted/Inter-BlackItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Regular.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Italic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Thin.woff2 \
+	$(FONTDIR)/static-hinted/Inter-ThinItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Light.woff2 \
+	$(FONTDIR)/static-hinted/Inter-LightItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-ExtraLight.woff2 \
+	$(FONTDIR)/static-hinted/Inter-ExtraLightItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Medium.woff2 \
+	$(FONTDIR)/static-hinted/Inter-MediumItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-SemiBold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-SemiBoldItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Bold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-BoldItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-ExtraBold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-ExtraBoldItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayBlack.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayBlackItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-Display.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayThin.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayThinItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayLight.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayLightItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraLight.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraLightItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayMedium.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayMediumItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplaySemiBold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplaySemiBoldItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayBold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayBoldItalic.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraBold.woff2 \
+	$(FONTDIR)/static-hinted/Inter-DisplayExtraBoldItalic.woff2
 
 
 all: var web static_otf static_ttf static_ttf_hinted
@@ -365,17 +380,24 @@ FBAKE_ARGS := check-universal \
               -x com.google.fonts/check/family/win_ascent_and_descent
 
 build/fontbakery-report-var.txt: \
+<<<<<<< HEAD
 		$(FONTDIR)/var/Inter2.var.ttf \
 		$(FONTDIR)/var/Inter2-Italic.var.ttf \
 		| venv
 	@echo "fontbakery {Inter2,Inter2-Italic}.var.ttf > $(@) ..."
+=======
+		$(FONTDIR)/var/Inter.var.ttf \
+		$(FONTDIR)/var/Inter-Italic.var.ttf \
+		| venv
+	@echo "fontbakery {Inter,Inter-Italic}.var.ttf > $(@) ..."
+>>>>>>> parent of f716c1de8 (try_rename)
 	@. $(VENV) ; fontbakery \
 		$(FBAKE_ARGS) -x com.google.fonts/check/STAT_strings \
 		$^ > $@ \
 		|| (cat $@; echo "report at $@"; touch -m -t 199001010000 $@; exit 1)
 
-build/fontbakery-report-static.txt: $(wildcard $(FONTDIR)/static/Inter2-*.otf) | venv
-	@echo "fontbakery static/Inter2-*.otf > $(@) ..."
+build/fontbakery-report-static.txt: $(wildcard $(FONTDIR)/static/Inter-*.otf) | venv
+	@echo "fontbakery static/Inter-*.otf > $(@) ..."
 	@. $(VENV) ; fontbakery \
 		$(FBAKE_ARGS) -x com.google.fonts/check/family/underline_thickness \
 		$^ > $@ \
@@ -388,7 +410,7 @@ build/fontbakery-report-static.txt: $(wildcard $(FONTDIR)/static/Inter2-*.otf) |
 
 zip: all
 	bash misc/makezip2.sh -reveal-in-finder \
-		"build/release/Inter2-$(VERSION)-$(shell git rev-parse --short=10 HEAD).zip"
+		"build/release/Inter-$(VERSION)-$(shell git rev-parse --short=10 HEAD).zip"
 
 zip_beta: \
 		$(FONTDIR)/var/InterV.var.ttf \
@@ -406,7 +428,7 @@ zip_beta: \
 # - step1 rebuilds from scratch, since font version & ID is based on git hash.
 # - step2 runs tests, then makes a zip archive and updates the website (docs/ dir.)
 
-DIST_ZIP = build/release/Inter2-${VERSION}.zip
+DIST_ZIP = build/release/Inter-${VERSION}.zip
 
 dist: dist_preflight
 	@# rebuild since font version & ID is based on git hash
@@ -464,45 +486,45 @@ dist_postflight:
 # ---------------------------------------------------------------------------------
 # install
 
-INSTALLDIR := $(HOME)/Library/Fonts/Inter2
+INSTALLDIR := $(HOME)/Library/Fonts/Inter
 
 install: install_var \
-  $(INSTALLDIR)/Inter2-Black.otf \
-  $(INSTALLDIR)/Inter2-BlackItalic.otf \
-  $(INSTALLDIR)/Inter2-Regular.otf \
-  $(INSTALLDIR)/Inter2-Italic.otf \
-  $(INSTALLDIR)/Inter2-Thin.otf \
-  $(INSTALLDIR)/Inter2-ThinItalic.otf \
-  $(INSTALLDIR)/Inter2-Light.otf \
-  $(INSTALLDIR)/Inter2-LightItalic.otf \
-  $(INSTALLDIR)/Inter2-ExtraLight.otf \
-  $(INSTALLDIR)/Inter2-ExtraLightItalic.otf \
-  $(INSTALLDIR)/Inter2-Medium.otf \
-  $(INSTALLDIR)/Inter2-MediumItalic.otf \
-  $(INSTALLDIR)/Inter2-SemiBold.otf \
-  $(INSTALLDIR)/Inter2-SemiBoldItalic.otf \
-  $(INSTALLDIR)/Inter2-Bold.otf \
-  $(INSTALLDIR)/Inter2-BoldItalic.otf \
-  $(INSTALLDIR)/Inter2-ExtraBold.otf \
-  $(INSTALLDIR)/Inter2-ExtraBoldItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayBlack.otf \
-  $(INSTALLDIR)/Inter2-DisplayBlackItalic.otf \
-  $(INSTALLDIR)/Inter2-Display.otf \
-  $(INSTALLDIR)/Inter2-DisplayItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayThin.otf \
-  $(INSTALLDIR)/Inter2-DisplayThinItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayLight.otf \
-  $(INSTALLDIR)/Inter2-DisplayLightItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayExtraLight.otf \
-  $(INSTALLDIR)/Inter2-DisplayExtraLightItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayMedium.otf \
-  $(INSTALLDIR)/Inter2-DisplayMediumItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplaySemiBold.otf \
-  $(INSTALLDIR)/Inter2-DisplaySemiBoldItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayBold.otf \
-  $(INSTALLDIR)/Inter2-DisplayBoldItalic.otf \
-  $(INSTALLDIR)/Inter2-DisplayExtraBold.otf \
-  $(INSTALLDIR)/Inter2-DisplayExtraBoldItalic.otf
+  $(INSTALLDIR)/Inter-Black.otf \
+  $(INSTALLDIR)/Inter-BlackItalic.otf \
+  $(INSTALLDIR)/Inter-Regular.otf \
+  $(INSTALLDIR)/Inter-Italic.otf \
+  $(INSTALLDIR)/Inter-Thin.otf \
+  $(INSTALLDIR)/Inter-ThinItalic.otf \
+  $(INSTALLDIR)/Inter-Light.otf \
+  $(INSTALLDIR)/Inter-LightItalic.otf \
+  $(INSTALLDIR)/Inter-ExtraLight.otf \
+  $(INSTALLDIR)/Inter-ExtraLightItalic.otf \
+  $(INSTALLDIR)/Inter-Medium.otf \
+  $(INSTALLDIR)/Inter-MediumItalic.otf \
+  $(INSTALLDIR)/Inter-SemiBold.otf \
+  $(INSTALLDIR)/Inter-SemiBoldItalic.otf \
+  $(INSTALLDIR)/Inter-Bold.otf \
+  $(INSTALLDIR)/Inter-BoldItalic.otf \
+  $(INSTALLDIR)/Inter-ExtraBold.otf \
+  $(INSTALLDIR)/Inter-ExtraBoldItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayBlack.otf \
+  $(INSTALLDIR)/Inter-DisplayBlackItalic.otf \
+  $(INSTALLDIR)/Inter-Display.otf \
+  $(INSTALLDIR)/Inter-DisplayItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayThin.otf \
+  $(INSTALLDIR)/Inter-DisplayThinItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayLight.otf \
+  $(INSTALLDIR)/Inter-DisplayLightItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayExtraLight.otf \
+  $(INSTALLDIR)/Inter-DisplayExtraLightItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayMedium.otf \
+  $(INSTALLDIR)/Inter-DisplayMediumItalic.otf \
+  $(INSTALLDIR)/Inter-DisplaySemiBold.otf \
+  $(INSTALLDIR)/Inter-DisplaySemiBoldItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayBold.otf \
+  $(INSTALLDIR)/Inter-DisplayBoldItalic.otf \
+  $(INSTALLDIR)/Inter-DisplayExtraBold.otf \
+  $(INSTALLDIR)/Inter-DisplayExtraBoldItalic.otf
 
 install_var: \
 	$(INSTALLDIR)/InterV.var.ttf \

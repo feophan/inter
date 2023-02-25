@@ -2166,7 +2166,7 @@ value = "C698F293-3EC0-4A5A-A3A0-0FDB1F5CF265";
 }
 );
 date = "2016-12-04 18:21:54 +0000";
-familyName = Inter;
+familyName = Inter2;
 featurePrefixes = (
 {
 code = "languagesystem DFLT dflt;
@@ -3769,7 +3769,7 @@ name = "Display Thin";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -3812,7 +3812,7 @@ name = "Display Extra Light";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -3855,7 +3855,7 @@ name = "Display Light";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -3897,7 +3897,7 @@ name = Display;
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -3939,7 +3939,7 @@ name = "Display Medium";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -3982,7 +3982,7 @@ name = "Display Semi Bold";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -4027,7 +4027,7 @@ name = "Display Bold";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -4070,7 +4070,7 @@ name = "Display Extra Bold";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;
@@ -4112,7 +4112,7 @@ name = "Display Black";
 properties = (
 {
 key = WWSFamilyName;
-value = "Inter Display";
+value = "Inter2 Display";
 },
 {
 key = WWSSubfamilyName;

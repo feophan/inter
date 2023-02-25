@@ -583,6 +583,11 @@ lookup ccmp03 {
   sub a ringsubnosp by aringbelow;
 } ccmp03;
 
+lookup ccmp04 {
+  sub ebreve acutecomb by ebreveacute;
+  sub ebreve gravecomb by ebrevegrave;
+} ccmp04;
+
 # * enclosingsquarecomb -> composite
 sub A' enclosingsquarecomb' by A.squared;
 sub B enclosingsquarecomb by B.squared;

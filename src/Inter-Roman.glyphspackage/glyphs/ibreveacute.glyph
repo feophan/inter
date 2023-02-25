@@ -81,7 +81,7 @@ ref = idotless;
 },
 {
 alignment = 1;
-pos = (420,0);
+pos = (420,42);
 ref = breveacutecomb.cn;
 }
 );

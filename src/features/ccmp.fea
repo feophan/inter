@@ -33,14 +33,6 @@ lookup idieresis_double {
   sub [Idieresis Yi-cy] [Idieresis Yi-cy] by Idieresis.double;
 } idieresis_double;
 
-# macron/breve + acute/grave
-lookup ccmp01 {
-  sub macroncomb acutecomb by macronacutecomb.lc;
-  sub macroncomb gravecomb by macrongravecomb.lc;
-  sub brevenosp acutecomb by breveacutecomb.cn;
-  sub brevenosp gravecomb by brevegravecomb.cn;
-} ccmp01;
-
 # Transpose sequences like /i /gravecomb -> /idotless /gravecomb
 lookup ccmp02 {
   sub i' @CCMP_ACC by idotless;
@@ -274,8 +266,6 @@ lookup ccmp03 {
   sub a brevetildecomb.cn by abrevetilde;
   sub e breveacutecomb.cn by ebreveacute;
   sub e brevegravecomb.cn by ebrevegrave;
-  sub e brevenosp acutecomb by ebreveacute;
-  sub e brevenosp gravecomb by ebrevegrave;
   sub E dotbelow by Edotbelow;
   sub e dotbelow by edotbelow;
   sub E hookabovecmb by Ehookabove;
@@ -586,7 +576,27 @@ lookup ccmp03 {
 lookup ccmp04 {
   sub ebreve acutecomb by ebreveacute;
   sub ebreve gravecomb by ebrevegrave;
+  sub ibreve acutecomb by ibreveacute;
+  sub ibreve gravecomb by ibrevegrave;
+  sub obreve acutecomb by obreveacute;
+  sub obreve gravecomb by obrevegrave;
+  sub ubreve acutecomb by ubreveacute;
+  sub ubreve gravecomb by ubrevegrave;
 } ccmp04;
+
+lookup ccmp05 {
+  sub amacron' acutecomb by a macron;
+  sub imacron' acutecomb by i macron;
+  sub umacron' acutecomb by u macron;
+} ccmp05;
+
+# macron/breve + acute/grave
+lookup ccmp06 {
+  sub macroncomb acutecomb by macronacutecomb.lc;
+  sub macroncomb gravecomb by macrongravecomb.lc;
+  sub brevenosp acutecomb by breveacutecomb.cn;
+  sub brevenosp gravecomb by brevegravecomb.cn;
+} ccmp06;
 
 # * enclosingsquarecomb -> composite
 sub A' enclosingsquarecomb' by A.squared;

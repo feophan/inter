@@ -34,12 +34,12 @@ lookup idieresis_double {
 } idieresis_double;
 
 # macron/breve + acute/grave
-lookup combmarks {
+lookup ccmp01 {
   sub macroncomb acutecomb by macronacutecomb.lc;
   sub macroncomb gravecomb by macrongravecomb.lc;
   sub brevenosp acutecomb by breveacutecomb.cn;
   sub brevenosp gravecomb by brevegravecomb.cn;
-} combmarks;
+} ccmp01;
 
 # Transpose sequences like /i /gravecomb -> /idotless /gravecomb
 lookup ccmp02 {
@@ -124,6 +124,7 @@ lookup ccmp03 {
   sub a macroncomb by amacron;
   sub A brevenosp by Abreve;
   sub a brevenosp by abreve;
+  sub a brebenops gravecomb by abrevegrave;
   sub A ogoneknosp by Aogonek;
   sub a ogoneknosp by aogonek;
   sub aogonek ringnosp by aringogonek;

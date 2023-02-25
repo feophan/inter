@@ -586,8 +586,11 @@ lookup ccmp04 {
 
 lookup ccmp05 {
   sub amacron' acutecomb by a macron;
-  sub imacron' acutecomb by i macron;
+  sub imacron' acutecomb by idotless macron;
   sub umacron' acutecomb by u macron;
+  sub amacron' gravecomb by a macron;
+  sub imacron' gravecomb by idotless macron;
+  sub umacron' gravecomb by u macron;
 } ccmp05;
 
 # macron/breve + acute/grave

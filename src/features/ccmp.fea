@@ -124,7 +124,7 @@ lookup ccmp03 {
   sub a macroncomb by amacron;
   sub A brevenosp by Abreve;
   sub a brevenosp by abreve;
-  sub a brebenops gravecomb by abrevegrave;
+  sub a brevenops gravecomb by abrevegrave;
   sub A ogoneknosp by Aogonek;
   sub a ogoneknosp by aogonek;
   sub aogonek ringnosp by aringogonek;

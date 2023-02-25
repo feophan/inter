@@ -272,6 +272,8 @@ lookup ccmp03 {
   sub a brevehookcomb.cn by abrevehookabove;
   sub A brevetildecomb.cn by Abrevetilde;
   sub a brevetildecomb.cn by abrevetilde;
+  sub e breveacutecomb.cn by ebreveacute;
+  sub e brevegravecomb.cn by ebrevegrave;
   sub E dotbelow by Edotbelow;
   sub e dotbelow by edotbelow;
   sub E hookabovecmb by Ehookabove;
@@ -290,6 +292,8 @@ lookup ccmp03 {
   #sub E circumflextildecomb.cn by uni1EC4;
   sub E circumflexnosp tildecomb by Ecircumflextilde;
   sub e circumflextildecomb.cn by ecircumflextilde;
+  sub idotless breveacutecomb.cn by ibreveacute;
+  sub idotless brevegravecomb.cn by ibrevegrave;
   sub I hookabovecmb by Ihookabove;
   sub idotless hookabovecmb by ihookabove;
   sub I dotbelow by Idotbelow;
@@ -298,6 +302,8 @@ lookup ccmp03 {
   sub o dotbelow by odotbelow;
   sub O hookabovecmb by Ohookabove;
   sub o hookabovecmb by ohookabove;
+  sub o breveacutecomb.cn by obreveacute;
+  sub o brevegravecomb.cn by obrevegrave;
   #sub O circumflexacutecomb.cn by uni1ED0;
   sub O circumflexnosp acutecomb by Ocircumflexacute;
   sub o circumflexacutecomb.cn by ocircumflexacute;
@@ -320,6 +326,8 @@ lookup ccmp03 {
   sub ohorn tildecomb by ohorntilde;
   sub Ohorn dotbelow by Ohorndotbelow;
   sub ohorn dotbelow by ohorndotbelow;
+  sub u breveacutecomb.cn by ubreveacute;
+  sub u brevegravecomb.cn by ubrevegrave;
   sub U dotbelow by Udotbelow;
   sub u dotbelow by udotbelow;
   sub U hookabovecmb by Uhookabove;

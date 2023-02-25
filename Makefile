@@ -33,9 +33,9 @@ $(UFODIR)/%.designspace: $(UFODIR)/%.glyphs $(UFODIR)/features | venv
 	. $(VENV) ; python misc/tools/postprocess-designspace.py $@
 
 # UFOs from designspace
-$(UFODIR)/Inter2-%Italic.ufo: $(UFODIR)/Inter2-Italic.designspace | venv
+$(UFODIR)/Inter-%Italic.ufo: $(UFODIR)/Inter2-Italic.designspace | venv
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
-$(UFODIR)/Inter2-%.ufo: $(UFODIR)/Inter2-Roman.designspace | venv
+$(UFODIR)/Inter-%.ufo: $(UFODIR)/Inter2-Roman.designspace | venv
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
 
 # make sure intermediate files are not rm'd by make
@@ -119,36 +119,36 @@ $(UFODIR):
 
 # roman + italic with STAT
 $(FONTDIR)/var/inter-roman-and-italic.stamp: \
-	  $(FONTDIR)/var/_Inter2-Roman.var.ttf \
-	  $(FONTDIR)/var/_Inter2-Italic.var.ttf \
+	  $(FONTDIR)/var/_Inter-Roman.var.ttf \
+	  $(FONTDIR)/var/_Inter-Italic.var.ttf \
 	  | venv
 	@#. $(VENV) ; python misc/tools/postprocess-vf2.py $^
 	mkdir $(FONTDIR)/var/gen-stat
 	. $(VENV) ; gftools gen-stat --out $(FONTDIR)/var/gen-stat $^
-	mv $(FONTDIR)/var/gen-stat/_Inter2-Roman.var.ttf $(FONTDIR)/var/Inter2.var.ttf
-	mv $(FONTDIR)/var/gen-stat/_Inter2-Italic.var.ttf $(FONTDIR)/var/Inter2-Italic.var.ttf
+	mv $(FONTDIR)/var/gen-stat/_Inter-Roman.var.ttf $(FONTDIR)/var/Inter.var.ttf
+	mv $(FONTDIR)/var/gen-stat/_Inter-Italic.var.ttf $(FONTDIR)/var/Inter-Italic.var.ttf
 	rm -rf $(FONTDIR)/var/gen-stat
 	touch $@
 
-$(FONTDIR)/var/Inter2.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
+$(FONTDIR)/var/Inter.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
-$(FONTDIR)/var/Inter2-Italic.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
+$(FONTDIR)/var/Inter-Italic.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
 
 $(FONTDIR)/var/InterV.var.ttf: $(FONTDIR)/var/Inter.var.ttf | venv
 	. $(VENV) ; python misc/tools/rename.py --family "Inter V" -o $@ $<
-$(FONTDIR)/var/InterV-Italic.var.ttf: $(FONTDIR)/var/Inter2-Italic.var.ttf | venv
+$(FONTDIR)/var/InterV-Italic.var.ttf: $(FONTDIR)/var/Inter-Italic.var.ttf | venv
 	. $(VENV) ; python misc/tools/rename.py --family "Inter V" -o $@ $<
 
 var: \
-	$(FONTDIR)/var/Inter2.var.ttf \
-	$(FONTDIR)/var/Inter2-Italic.var.ttf \
+	$(FONTDIR)/var/Inter.var.ttf \
+	$(FONTDIR)/var/Inter-Italic.var.ttf \
 	$(FONTDIR)/var/InterV.var.ttf \
 	$(FONTDIR)/var/InterV-Italic.var.ttf
 
 var_web: \
-	$(FONTDIR)/var/Inter2.var.woff2 \
-	$(FONTDIR)/var/Inter2-Italic.var.woff2
+	$(FONTDIR)/var/Inter.var.woff2 \
+	$(FONTDIR)/var/Inter-Italic.var.woff2
 
 web: var_web static_web
 
@@ -365,10 +365,10 @@ FBAKE_ARGS := check-universal \
               -x com.google.fonts/check/family/win_ascent_and_descent
 
 build/fontbakery-report-var.txt: \
-		$(FONTDIR)/var/Inter2.var.ttf \
-		$(FONTDIR)/var/Inter2-Italic.var.ttf \
+		$(FONTDIR)/var/Inter.var.ttf \
+		$(FONTDIR)/var/Inter-Italic.var.ttf \
 		| venv
-	@echo "fontbakery {Inter2,Inter2-Italic}.var.ttf > $(@) ..."
+	@echo "fontbakery {Inter,Inter-Italic}.var.ttf > $(@) ..."
 	@. $(VENV) ; fontbakery \
 		$(FBAKE_ARGS) -x com.google.fonts/check/STAT_strings \
 		$^ > $@ \

@@ -33,9 +33,15 @@ $(UFODIR)/%.designspace: $(UFODIR)/%.glyphs $(UFODIR)/features | venv
 	. $(VENV) ; python misc/tools/postprocess-designspace.py $@
 
 # UFOs from designspace
+<<<<<<< HEAD
 $(UFODIR)/Inter-%Italic.ufo: $(UFODIR)/Inter-Italic.designspace | venv
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
 $(UFODIR)/Inter-%.ufo: $(UFODIR)/Inter-Roman.designspace | venv
+=======
+$(UFODIR)/Inter-%Italic.ufo: $(UFODIR)/Inter2-Italic.designspace | venv
+	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
+$(UFODIR)/Inter-%.ufo: $(UFODIR)/Inter2-Roman.designspace | venv
+>>>>>>> parent of 52df942c6 (Update Makefile)
 	. $(VENV) ; bash misc/tools/gen-instance-ufo.sh $< $@
 
 # make sure intermediate files are not rm'd by make
@@ -126,16 +132,21 @@ $(FONTDIR)/var/inter-roman-and-italic.stamp: \
 	mkdir $(FONTDIR)/var/gen-stat
 	. $(VENV) ; gftools gen-stat --out $(FONTDIR)/var/gen-stat $^
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mv $(FONTDIR)/var/gen-stat/_Inter2-Roman.var.ttf $(FONTDIR)/var/Inter2.var.ttf
 	mv $(FONTDIR)/var/gen-stat/_Inter2-Italic.var.ttf $(FONTDIR)/var/Inter2-Italic.var.ttf
 =======
 	mv $(FONTDIR)/var/gen-stat/_Inter-Roman.var.ttf $(FONTDIR)/var/Inter.var.ttf
 	mv $(FONTDIR)/var/gen-stat/_Inter-Italic.var.ttf $(FONTDIR)/var/Inter-Italic.var.ttf
 >>>>>>> parent of f716c1de8 (try_rename)
+=======
+	mv $(FONTDIR)/var/gen-stat/_Inter-Roman.var.ttf $(FONTDIR)/var/Inter.var.ttf
+	mv $(FONTDIR)/var/gen-stat/_Inter-Italic.var.ttf $(FONTDIR)/var/Inter-Italic.var.ttf
+>>>>>>> parent of 52df942c6 (Update Makefile)
 	rm -rf $(FONTDIR)/var/gen-stat
 	touch $@
 
-$(FONTDIR)/var/Inter2.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
+$(FONTDIR)/var/Inter.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
 $(FONTDIR)/var/Inter-Italic.var.ttf: $(FONTDIR)/var/inter-roman-and-italic.stamp
 	touch $@
@@ -147,16 +158,22 @@ $(FONTDIR)/var/InterV-Italic.var.ttf: $(FONTDIR)/var/Inter-Italic.var.ttf | venv
 
 var: \
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(FONTDIR)/var/Inter2.var.ttf \
 	$(FONTDIR)/var/Inter2-Italic.var.ttf \
 =======
 	$(FONTDIR)/var/Inter.var.ttf \
 	$(FONTDIR)/var/Inter-Italic.var.ttf \
 >>>>>>> parent of f716c1de8 (try_rename)
+=======
+	$(FONTDIR)/var/Inter.var.ttf \
+	$(FONTDIR)/var/Inter-Italic.var.ttf \
+>>>>>>> parent of 52df942c6 (Update Makefile)
 	$(FONTDIR)/var/InterV.var.ttf \
 	$(FONTDIR)/var/InterV-Italic.var.ttf
 
 var_web: \
+<<<<<<< HEAD
 <<<<<<< HEAD
 	$(FONTDIR)/var/Inter2.var.woff2 \
 	$(FONTDIR)/var/Inter2-Italic.var.woff2
@@ -164,6 +181,10 @@ var_web: \
 	$(FONTDIR)/var/Inter.var.woff2 \
 	$(FONTDIR)/var/Inter-Italic.var.woff2
 >>>>>>> parent of f716c1de8 (try_rename)
+=======
+	$(FONTDIR)/var/Inter.var.woff2 \
+	$(FONTDIR)/var/Inter-Italic.var.woff2
+>>>>>>> parent of 52df942c6 (Update Makefile)
 
 web: var_web static_web
 
@@ -381,6 +402,7 @@ FBAKE_ARGS := check-universal \
 
 build/fontbakery-report-var.txt: \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$(FONTDIR)/var/Inter2.var.ttf \
 		$(FONTDIR)/var/Inter2-Italic.var.ttf \
 		| venv
@@ -391,6 +413,12 @@ build/fontbakery-report-var.txt: \
 		| venv
 	@echo "fontbakery {Inter,Inter-Italic}.var.ttf > $(@) ..."
 >>>>>>> parent of f716c1de8 (try_rename)
+=======
+		$(FONTDIR)/var/Inter.var.ttf \
+		$(FONTDIR)/var/Inter-Italic.var.ttf \
+		| venv
+	@echo "fontbakery {Inter,Inter-Italic}.var.ttf > $(@) ..."
+>>>>>>> parent of 52df942c6 (Update Makefile)
 	@. $(VENV) ; fontbakery \
 		$(FBAKE_ARGS) -x com.google.fonts/check/STAT_strings \
 		$^ > $@ \
